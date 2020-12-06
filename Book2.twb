@@ -1,0 +1,499 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20203.20.1110.1623                               -->
+<workbook original-version='18.1' source-build='2020.3.3 (20203.20.1110.1623)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Products' inline='true' name='federated.0prphvv0ly7me218s2hht18bumnb' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Products' name='textscan.0taeo8u1kjspda11lof7e1uorot2'>
+            <connection class='textscan' directory='C:/Users/ssgw/Desktop' filename='Products.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0taeo8u1kjspda11lof7e1uorot2' name='Products.csv' table='[Products#csv]' type='table'>
+          <columns character-set='windows-1252' header='yes' locale='pl_PL' separator=';'>
+            <column datatype='string' name='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued' ordinal='0' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0taeo8u1kjspda11lof7e1uorot2' name='Products.csv' table='[Products#csv]' type='table'>
+          <columns character-set='windows-1252' header='yes' locale='pl_PL' separator=';'>
+            <column datatype='string' name='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued' ordinal='0' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Products.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;ibm-5348_P100-1997&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;binary&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;zł&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pl_PL&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot; &quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]</local-name>
+            <parent-name>[Products.csv]</parent-name>
+            <remote-alias>ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='binary' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Products.csv_60DB56E59EDF4DEC86D8B4C1E416764E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='FullPrice' datatype='integer' name='[Calculation_85849922862043136]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 7]*[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 8]' />
+      </column>
+      <column caption='Discontinued' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 10]' role='dimension' type='nominal' user:SplitFieldIndex='10' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 10 ) )' />
+      </column>
+      <column caption='Product ID' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 1 ) )' />
+      </column>
+      <column caption='ProductName' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 2 ) )' />
+      </column>
+      <column caption='SupplierID' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3]' role='dimension' type='nominal' user:SplitFieldIndex='3' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 3 ) )' />
+      </column>
+      <column caption='CategoryID' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 4]' role='dimension' type='nominal' user:SplitFieldIndex='4' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 4 ) )' />
+      </column>
+      <column caption='QuantityPerUnit' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 5]' role='dimension' type='nominal' user:SplitFieldIndex='5' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 5 ) )' />
+      </column>
+      <column caption='UnitPrice' datatype='string' hidden='true' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 6]' role='dimension' type='nominal' user:SplitFieldIndex='6' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 6 ) )' />
+      </column>
+      <column caption='UnitsInStock' datatype='integer' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 7]' role='dimension' type='ordinal' user:SplitFieldIndex='7' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='INT(TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 7 ) ))' />
+      </column>
+      <column caption='UnitsOnOrder' datatype='integer' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 8]' role='dimension' type='ordinal' user:SplitFieldIndex='8' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='INT(TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 8 ) ))' />
+      </column>
+      <column caption='ReorderLevel' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 9]' role='dimension' type='nominal' user:SplitFieldIndex='9' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+        <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 9 ) )' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Products.csv' datatype='table' name='[__tableau_internal_object_id__].[Products.csv_60DB56E59EDF4DEC86D8B4C1E416764E]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Poland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 1' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 2' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 4' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 5' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 7' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 8' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 9' />
+        <field-sort-custom-order field='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 10' />
+        <field-sort-custom-order field='Calculation_85849922862043136' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Products.csv' id='Products.csv_60DB56E59EDF4DEC86D8B4C1E416764E'>
+            <properties context=''>
+              <relation connection='textscan.0taeo8u1kjspda11lof7e1uorot2' name='Products.csv' table='[Products#csv]' type='table'>
+                <columns character-set='windows-1252' header='yes' locale='pl_PL' separator=';'>
+                  <column datatype='string' name='ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued' ordinal='0' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Products' name='federated.0prphvv0ly7me218s2hht18bumnb' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0prphvv0ly7me218s2hht18bumnb'>
+            <column caption='Product ID' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 1 ) )' />
+            </column>
+            <column caption='SupplierID' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3]' role='dimension' type='nominal' user:SplitFieldIndex='3' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 3 ) )' />
+            </column>
+            <column caption='ReorderLevel' datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 9]' role='dimension' type='nominal' user:SplitFieldIndex='9' user:SplitFieldOrigin='[federated.0prphvv0ly7me218s2hht18bumnb].[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]'>
+              <calculation class='tableau' formula='TRIM( SPLIT( [ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued], &quot;,&quot;, 9 ) )' />
+            </column>
+            <column datatype='string' name='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]' role='dimension' type='nominal' />
+            <column-instance column='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 1]' derivation='None' name='[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 1:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3]' derivation='None' name='[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 9]' derivation='None' name='[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 9:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued]' derivation='None' name='[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 1:nk] / ([federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3:nk] / [federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued:nk]))</rows>
+        <cols>([federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 9:nk] / [federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3:nk])</cols>
+      </table>
+      <simple-id uuid='{C705A24F-9135-48D9-A802-491A7BE54EBA}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F6609DE2-EF48-4CA5-AC13-D3D80579C215}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 3:nk]</field>
+            <field>[federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued - Split 9:nk]</field>
+            <field>[federated.0prphvv0ly7me218s2hht18bumnb].[none:ProductID,ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{2A5F502D-97BE-4FC3-9D9C-8DAF223A1859}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2F12F885-29D6-41C4-8088-AD65843B6F87}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      8fg3v6wAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACFUlEQVR4nO3TMQEAIAzAMMC/5yFjRxMFfXpnZg5Eve0A2GQA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQD
+      kGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBp
+      BiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA
+      0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDN
+      AKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxA
+      mgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZ
+      gDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFI
+      MwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKQZgDQDkGYA0gxAmgFIMwBpBiDNAKR9Y+0F
+      fBUOM1sAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

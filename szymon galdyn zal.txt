@@ -1,0 +1,40 @@
+SELECT 
+firstname
+,lastname
+,country
+,SUM(customernumber) as klienci
+FROM employees
+    INNER JOIN customers ON employees.employeenumber = customers.salesRepEmployeeNumber
+    GROUP BY customernumber
+    ORDER BY klienci;
+    
+SELECT 
+YEAR(orderDate) AS ROK
+,COUNT(orderDate) AS ILOSC
+FROM products
+INNER JOIN orderdetails ON products.productCode = orderdetails.productCode
+INNER JOIN orders ON orderdetails.orderNumber = orders.orderNumber
+WHERE productName = "1969 Harley Davidson Ultimate Chopper"
+GROUP BY YEAR(orderDate);
+
+
+SELECT 
+YEAR(orderDate) AS rok
+,SUM(quantityordered * priceeach) AS wartosc_sprzedazy
+FROM products
+INNER JOIN orderdetails ON products.productCode = orderdetails.productCode
+INNER JOIN orders ON orderdetails.orderNumber = orders.orderNumber
+WHERE productName = "1969 Harley Davidson Ultimate Chopper"
+GROUP BY YEAR(orderDate);
+
+
+SELECT 
+productline
+,COUNT(productcode)
+FROM products
+GROUp BY productline
+HAVING COUNT(productcode) > 10;
+
+
+
+
