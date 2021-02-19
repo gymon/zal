@@ -1,3 +1,5 @@
+Stwórz zapytanie, które pokaże imię nazwisko oraz kraj w którym zatrudniony jest pracownik oraz ilość customerów, których on obsługuje i zapisz je do pliku imie_nazwisko_zal.txt (2 punkty)
+
 SELECT 
 firstname AS Imie
 ,lastname AS Naziwsko
@@ -8,6 +10,8 @@ FROM employees
     GROUP BY customernumber
     ORDER BY klienci;
     
+    Ilość sprzedaży w poszczególnych latach Harleya Davidsona(rocznik 1969)
+
 SELECT 
 YEAR(orderDate) AS ROK
 ,COUNT(orderDate) AS ILOSC
@@ -17,6 +21,7 @@ INNER JOIN orders ON orderdetails.orderNumber = orders.orderNumber
 WHERE productName = "1969 Harley Davidson Ultimate Chopper"
 GROUP BY YEAR(orderDate);
 
+Suma ze sprzedaży w poszczególnych latach dla tego samego Harleya
 
 SELECT 
 YEAR(orderDate) AS rok
@@ -27,6 +32,7 @@ INNER JOIN orders ON orderdetails.orderNumber = orders.orderNumber
 WHERE productName = "1969 Harley Davidson Ultimate Chopper"
 GROUP BY YEAR(orderDate);
 
+Pokaż linie produkcyjne, które produkują ponad 10 produktów. Pokaż w raporcie ilość produkowanych produktów na każdej linii
 
 SELECT 
 productline
@@ -36,5 +42,5 @@ GROUP BY productline
 HAVING COUNT(productcode) > 10;
 
 
-
+Link do gita
 https://github.com/gymon/zal
